@@ -1,7 +1,7 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const getName = () => {
-  const question = "May I have your name?";
+  const question = 'May I have your name?';
   return readlineSync.question(`${question}: `);
 };
 
