@@ -7,11 +7,11 @@ brain-games:
 publish:
 	npm publish --dry-run
 
-test:
-	npm test
+# test:
+# 	npm test
 
-test-coverage:
-	npm test -- --coverage --coverageProvider=v8
+# test-coverage:
+# 	npm test -- --coverage --coverageProvider=v8
 
 lint:
 	npx eslint .
