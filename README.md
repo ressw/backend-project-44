@@ -7,3 +7,5 @@
 Asciinema of Brain Games
 
 [![asciicast](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6.svg)](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6)
+
+<script async id="asciicast-wLJldORcn5AaqrYiNqzQ50Tc6" src="https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6.js"></script>
