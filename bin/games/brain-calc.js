@@ -18,16 +18,16 @@ const run = () => {
   console.log();
 
   let attemp = 0;
+  const signs = ['+', '-', '*'];
   while (attemp < questionsNumber) {
     const num1 = getRandomNumber(20);
     const num2 = getRandomNumber(10);
-    const signs = ['+', '-', '*'];
     const sign = signs[getRandomNumber(3)];
     console.log(`Question: ${num1} ${sign} ${num2}`);
     const correctAnswer = getRandomSignsResult(num1, num2, sign);
     const userAnswer = getUserAnswer('Your answer: ');
 
-    if (+correctAnswer === +userAnswer) {
+    if (correctAnswer === parseInt(userAnswer, 10)) {
       console.log('Correct!');
       console.log();
       attemp += 1;
