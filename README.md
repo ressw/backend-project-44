@@ -6,6 +6,10 @@
 
 Asciinema of Brain Games
 
+brain-even
+
 [![asciicast](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6.svg)](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6)
 
-<script async id="asciicast-wLJldORcn5AaqrYiNqzQ50Tc6" src="https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6.js"></script>
+brain-calc
+
+[![asciicast](https://asciinema.org/a/E5J8yYb5FwdfScNk0CMmFtn6C.svg)](https://asciinema.org/a/E5J8yYb5FwdfScNk0CMmFtn6C)
