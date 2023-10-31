@@ -15,6 +15,7 @@ const isPrimeNumber = (num) => {
     }
     div += 1;
   }
+
   return true;
 };
 
