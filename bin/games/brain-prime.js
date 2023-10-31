@@ -5,31 +5,32 @@ import {
   getRandomNumber, gameOver, questionsNumber,
 } from '../../src/index.js';
 
-const getProgression = () => {
-  const firstNum = getRandomNumber(20);
-  const diff = getRandomNumber(5);
-  const len = 5 + getRandomNumber(5);
-  const progression = Array(len).fill()
-    .map((_, i) => firstNum + (i * diff));
-  return progression;
+const isPrimeNumber = (num) => {
+  if (num < 2) return false;
+  let div = 2;
+  const maxDiv = Math.trunc(num / 2);
+  while (div <= maxDiv) {
+    if (num % div === 0) {
+      return false;
+    }
+    div += 1;
+  }
+  return true;
 };
 
 const run = () => {
   const username = start();
-  console.log('What number is missing in the progression?');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   console.log();
 
   let attemp = 0;
   while (attemp < questionsNumber) {
-    const progression = getProgression();
-    const replaceIndex = getRandomNumber(progression.length - 1);
-    const correctAnswer = progression[replaceIndex];
-    progression[replaceIndex] = '..';
-    const progressionStr = progression.join(' ');
-    console.log(`Question: ${progressionStr}`);
+    const randomNum = getRandomNumber(350);
+    const correctAnswer = isPrimeNumber(randomNum) ? 'yes' : 'no';
+    console.log(`Question: ${randomNum}`);
     const userAnswer = getUserAnswer('Your answer: ');
 
-    if (correctAnswer === parseInt(userAnswer, 10)) {
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
       console.log();
       attemp += 1;
