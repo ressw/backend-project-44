@@ -61,5 +61,3 @@ const run = () => {
 };
 
 run();
-
-// console.log(getGreatestDivisor(2, 9));
