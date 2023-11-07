@@ -34,7 +34,7 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
   return divisor;
 };
 
-const run = () => {
+const brainGcd = () => {
   const username = start();
   console.log('Find the greatest common divisor of given numbers.');
   console.log();
@@ -60,4 +60,4 @@ const run = () => {
   return true;
 };
 
-run();
+brainGcd();
