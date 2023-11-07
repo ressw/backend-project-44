@@ -14,7 +14,7 @@ const getProgression = () => {
   return progression;
 };
 
-const run = () => {
+const brainProgression = () => {
   const username = start();
   console.log('What number is missing in the progression?');
   console.log();
@@ -43,4 +43,4 @@ const run = () => {
   return true;
 };
 
-run();
+brainProgression();
