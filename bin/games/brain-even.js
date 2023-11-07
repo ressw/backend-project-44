@@ -5,7 +5,7 @@ import {
   isEven, getUserAnswer, gameOver,
 } from '../../src/index.js';
 
-const run = () => {
+const brainEven = () => {
   const username = start();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log();
@@ -30,4 +30,4 @@ const run = () => {
   return true;
 };
 
-run();
+brainEven();
