@@ -12,7 +12,7 @@ const getRandomSignsResult = (num1, num2, sign) => {
   return null;
 };
 
-const run = () => {
+const brainCalc = () => {
   const username = start();
   console.log('What is the result of the expression?');
   console.log();
@@ -41,4 +41,6 @@ const run = () => {
   return true;
 };
 
-run();
+export default brainCalc;
+
+brainCalc();
