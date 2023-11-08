@@ -7,7 +7,7 @@ import {
 
 const getNumbersPair = () => {
   const divisors = [2, 3, 5];
-  const leastDivisor = divisors[getRandomNumber(1, 3)];
+  const leastDivisor = divisors[getRandomNumber(0, 2)];
   let randomMultiplier = getRandomNumber(1, 20);
   const firstNumber = leastDivisor * randomMultiplier;
   randomMultiplier = getRandomNumber(1, 20);
@@ -16,7 +16,8 @@ const getNumbersPair = () => {
 };
 
 const getGreatestDivisor = (firstNumber, secondNumber) => {
-  if (firstNumber === 0 || secondNumber === 0) return 1;
+  if (firstNumber === 0) return 1;
+  if (secondNumber === 0) return 1;
   let minNum = firstNumber;
   let maxNum = secondNumber;
   if (minNum > maxNum) {
