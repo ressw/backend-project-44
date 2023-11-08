@@ -2,7 +2,7 @@
 
 import {
   start, questionsNumber, getRandomNumber,
-  isEven, getUserAnswer, gameOver,
+  isEven, getUserAnswer, logCorrectAnswer, gameOver,
 } from '../src/index.js';
 
 const brainEven = () => {
@@ -18,8 +18,7 @@ const brainEven = () => {
     const answer = getUserAnswer('Your answer: ');
 
     if (check === answer) {
-      console.log('Correct!');
-      console.log();
+      logCorrectAnswer();
       attemp += 1;
     } else {
       gameOver(username, answer, check);
