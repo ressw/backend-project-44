@@ -8,8 +8,8 @@ export const getRandomNumber = (max = 9) => Math.floor(Math.random() * max);
 
 export const isEven = (num) => num % 2 === 0;
 
-export const gameOver = (username, answer, correctAnswer) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+export const gameOver = (username, correctAnswer, userAnswer) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${username}!`);
 };
 
@@ -23,7 +23,7 @@ export const checkCorrectAnswer = (username, correctAnswer, userAnswer) => {
     console.log();
     return true;
   }
-  gameOver(username, userAnswer, answer);
+  gameOver(username, answer, userAnswer);
   return false;
 };
 
