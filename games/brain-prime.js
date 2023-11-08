@@ -27,7 +27,7 @@ const brainPrime = () => {
   let attemp = 0;
   let check;
   while (attemp < questionsNumber) {
-    const randomNum = getRandomNumber(350);
+    const randomNum = getRandomNumber(1, 350);
     const correctAnswer = isPrimeNumber(randomNum) ? 'yes' : 'no';
     console.log(`Question: ${randomNum}`);
     const userAnswer = getUserAnswer('Your answer: ');
