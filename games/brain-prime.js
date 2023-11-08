@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {
-  start, getUserAnswer,
-  getRandomNumber, logCorrectAnswer, gameOver, questionsNumber,
+  start, getUserAnswer, getRandomNumber,
+  checkCorrectAnswer, questionsNumber,
 } from '../src/index.js';
 
 const isPrimeNumber = (num) => {
@@ -25,17 +25,16 @@ const brainPrime = () => {
   console.log();
 
   let attemp = 0;
+  let check;
   while (attemp < questionsNumber) {
     const randomNum = getRandomNumber(350);
     const correctAnswer = isPrimeNumber(randomNum) ? 'yes' : 'no';
     console.log(`Question: ${randomNum}`);
     const userAnswer = getUserAnswer('Your answer: ');
-
-    if (correctAnswer === userAnswer) {
-      logCorrectAnswer();
+    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
+    if (check) {
       attemp += 1;
     } else {
-      gameOver(username, userAnswer, correctAnswer);
       return false;
     }
   }

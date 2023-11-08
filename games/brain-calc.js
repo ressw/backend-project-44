@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {
-  start, getUserAnswer,
-  getRandomNumber, logCorrectAnswer, gameOver, questionsNumber,
+  start, getUserAnswer, getRandomNumber,
+  checkCorrectAnswer, questionsNumber,
 } from '../src/index.js';
 
 const getRandomSignsResult = (num1, num2, sign) => {
@@ -18,6 +18,7 @@ const brainCalc = () => {
   console.log();
 
   let attemp = 0;
+  let check;
   const signs = ['+', '-', '*'];
   while (attemp < questionsNumber) {
     const num1 = getRandomNumber(20);
@@ -26,12 +27,10 @@ const brainCalc = () => {
     console.log(`Question: ${num1} ${sign} ${num2}`);
     const correctAnswer = getRandomSignsResult(num1, num2, sign);
     const userAnswer = getUserAnswer('Your answer: ');
-
-    if (correctAnswer === parseInt(userAnswer, 10)) {
-      logCorrectAnswer();
+    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
+    if (check) {
       attemp += 1;
     } else {
-      gameOver(username, userAnswer, correctAnswer);
       return false;
     }
   }

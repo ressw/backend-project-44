@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {
-  start, questionsNumber, getRandomNumber,
-  isEven, getUserAnswer, logCorrectAnswer, gameOver,
+  start, getUserAnswer, getRandomNumber, isEven,
+  checkCorrectAnswer, questionsNumber,
 } from '../src/index.js';
 
 const brainEven = () => {
@@ -11,17 +11,16 @@ const brainEven = () => {
   console.log();
 
   let attemp = 0;
+  let check;
   while (attemp < questionsNumber) {
     const number = getRandomNumber();
-    const check = isEven(number) ? 'yes' : 'no';
+    const correctAnswer = isEven(number) ? 'yes' : 'no';
     console.log(`Question: ${number}`);
-    const answer = getUserAnswer('Your answer: ');
-
-    if (check === answer) {
-      logCorrectAnswer();
+    const userAnswer = getUserAnswer('Your answer: ');
+    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
+    if (check) {
       attemp += 1;
     } else {
-      gameOver(username, answer, check);
       return false;
     }
   }

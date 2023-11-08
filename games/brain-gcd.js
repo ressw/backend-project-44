@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {
-  start, getUserAnswer,
-  getRandomNumber, checkCorrectAnswer, questionsNumber,
+  start, getUserAnswer, getRandomNumber,
+  checkCorrectAnswer, questionsNumber,
 } from '../src/index.js';
 
 const getNumbersPair = () => {
