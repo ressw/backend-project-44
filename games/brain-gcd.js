@@ -48,7 +48,6 @@ const brainGcd = () => {
     firstNumber = 0;
     secondNumber = 14;
     const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
-    console.log('greatestDivisor:', correctAnswer);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
     const userAnswer = getUserAnswer('Your answer: ');
     check = checkCorrectAnswer(username, correctAnswer, userAnswer);
