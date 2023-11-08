@@ -43,7 +43,6 @@ const brainGcd = () => {
   let attemp = 0;
   let check = 0;
   while (attemp < questionsNumber) {
-    // const [firstNumber, secondNumber] = getNumbersPair();
     const [firstNumber, secondNumber] = getNumbersPair();
     const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
