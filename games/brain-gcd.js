@@ -16,10 +16,8 @@ const getNumbersPair = () => {
 };
 
 const getGreatestDivisor = (firstNumber, secondNumber) => {
-  if (firstNumber === 0) return 1;
-  if (secondNumber === 0) return 1;
-  let minNum = firstNumber;
-  let maxNum = secondNumber;
+  if ((firstNumber === 0) || (secondNumber === 0)) return 1;
+  let [minNum, maxNum] = [firstNumber, secondNumber];
   if (minNum > maxNum) {
     minNum = secondNumber;
     maxNum = firstNumber;
