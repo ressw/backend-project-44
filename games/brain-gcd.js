@@ -25,7 +25,7 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
 
   if (maxNum % minNum === 0) return minNum;
   let divisor = Math.trunc(minNum / 2);
-  while (divisor > 2) {
+  while (divisor > 1) {
     if (maxNum % divisor === 0 && minNum % divisor === 0) {
       return divisor;
     }
