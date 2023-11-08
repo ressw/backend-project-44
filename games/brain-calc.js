@@ -21,9 +21,9 @@ const brainCalc = () => {
   let check;
   const signs = ['+', '-', '*'];
   while (attemp < questionsNumber) {
-    const num1 = getRandomNumber(20);
-    const num2 = getRandomNumber(10);
-    const sign = signs[getRandomNumber(3)];
+    const num1 = getRandomNumber(1, 20);
+    const num2 = getRandomNumber(1, 10);
+    const sign = signs[getRandomNumber(0, 2)];
     console.log(`Question: ${num1} ${sign} ${num2}`);
     const correctAnswer = getRandomSignsResult(num1, num2, sign);
     const userAnswer = getUserAnswer('Your answer: ');
