@@ -4,7 +4,9 @@ export const getUserAnswer = (question) => readlineSync.question(`${question}`);
 
 export const questionsNumber = 3;
 
-export const getRandomNumber = (max = 9) => Math.floor(Math.random() * max);
+export function getRandomNumber(min = 1, max = 9) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 export const isEven = (num) => num % 2 === 0;
 
