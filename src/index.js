@@ -10,7 +10,7 @@ export const isEven = (num) => num % 2 === 0;
 
 export const logCorrectAnswer = () => {
   console.log('Correct!');
-  // console.log();
+  console.log();
 };
 
 export const gameOver = (username, answer, correctAnswer) => {
@@ -22,6 +22,6 @@ export const start = () => {
   console.log('Welcome to the Brain Games!');
   const username = getUserAnswer('May I have your name? ');
   console.log(`Hello, ${username}!`);
-  // console.log();
+  console.log();
   return username;
 };

@@ -16,6 +16,7 @@ const getNumbersPair = () => {
 };
 
 const getGreatestDivisor = (firstNumber, secondNumber) => {
+  if (firstNumber === 0 || secondNumber === 0) return 1;
   let minNum = firstNumber;
   let maxNum = secondNumber;
   if (minNum > maxNum) {
@@ -25,7 +26,7 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
 
   if (maxNum % minNum === 0) return minNum;
   let divisor = Math.trunc(minNum / 2);
-  while (divisor > 1) {
+  while (divisor > 2) {
     if (maxNum % divisor === 0 && minNum % divisor === 0) {
       return divisor;
     }
@@ -37,7 +38,7 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
 const brainGcd = () => {
   const username = start();
   console.log('Find the greatest common divisor of given numbers.');
-  // console.log();
+  console.log();
 
   let attemp = 0;
   while (attemp < questionsNumber) {
