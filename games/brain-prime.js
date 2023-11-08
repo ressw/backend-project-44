@@ -21,8 +21,8 @@ const isPrimeNumber = (num) => {
 
 const brainPrime = () => {
   const username = start();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  console.log();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
+  // console.log();
 
   let attemp = 0;
   let check;
