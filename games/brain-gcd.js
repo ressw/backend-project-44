@@ -2,7 +2,7 @@
 
 import {
   start, getUserAnswer,
-  getRandomNumber, gameOver, questionsNumber,
+  getRandomNumber, logCorrectAnswer, gameOver, questionsNumber,
 } from '../src/index.js';
 
 const getNumbersPair = () => {
@@ -47,8 +47,7 @@ const brainGcd = () => {
     const userAnswer = getUserAnswer('Your answer: ');
 
     if (greatestDivisor === parseInt(userAnswer, 10)) {
-      console.log('Correct!');
-      console.log();
+      logCorrectAnswer();
       attemp += 1;
     } else {
       gameOver(username, userAnswer, greatestDivisor);
