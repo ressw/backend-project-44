@@ -43,11 +43,15 @@ const brainGcd = () => {
   let attemp = 0;
   let check = 0;
   while (attemp < questionsNumber) {
-    const [firstNumber, secondNumber] = getNumbersPair();
-    const greatestDivisor = getGreatestDivisor(firstNumber, secondNumber);
+    // const [firstNumber, secondNumber] = getNumbersPair();
+    let [firstNumber, secondNumber] = getNumbersPair();
+    firstNumber = 0;
+    secondNumber = 14;
+    const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
+    console.log('greatestDivisor:', correctAnswer);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
     const userAnswer = getUserAnswer('Your answer: ');
-    check = checkCorrectAnswer(username, greatestDivisor, userAnswer);
+    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
     if (check) {
       attemp += 1;
     } else {
@@ -59,3 +63,6 @@ const brainGcd = () => {
 };
 
 export default brainGcd;
+
+// console.log(getGreatestDivisor(0, 14));
+brainGcd();
