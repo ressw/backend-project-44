@@ -6,9 +6,9 @@ import {
 } from '../src/index.js';
 
 const getProgression = () => {
-  const firstNum = getRandomNumber(20);
-  const diff = getRandomNumber(5);
-  const len = 5 + getRandomNumber(5);
+  const firstNum = getRandomNumber(1, 20);
+  const diff = getRandomNumber(1, 5);
+  const len = 5 + getRandomNumber(2, 5);
   const progression = Array(len).fill()
     .map((_, i) => firstNum + (i * diff));
   return progression;
@@ -23,7 +23,7 @@ const brainProgression = () => {
   let check;
   while (attemp < questionsNumber) {
     const progression = getProgression();
-    const replaceIndex = getRandomNumber(progression.length - 1);
+    const replaceIndex = getRandomNumber(0, progression.length - 1);
     const correctAnswer = progression[replaceIndex];
     progression[replaceIndex] = '..';
     const progressionStr = progression.join(' ');
