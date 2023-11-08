@@ -2,7 +2,7 @@
 
 import {
   start, getUserAnswer,
-  getRandomNumber, logCorrectAnswer, gameOver, questionsNumber,
+  getRandomNumber, checkCorrectAnswer, questionsNumber,
 } from '../src/index.js';
 
 const getNumbersPair = () => {
@@ -41,21 +41,19 @@ const brainGcd = () => {
   console.log();
 
   let attemp = 0;
+  let check = 0;
   while (attemp < questionsNumber) {
     const [firstNumber, secondNumber] = getNumbersPair();
     const greatestDivisor = getGreatestDivisor(firstNumber, secondNumber);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
     const userAnswer = getUserAnswer('Your answer: ');
-
-    if (greatestDivisor === parseInt(userAnswer, 10)) {
-      logCorrectAnswer();
+    check = checkCorrectAnswer(username, greatestDivisor, userAnswer);
+    if (check) {
       attemp += 1;
     } else {
-      gameOver(username, userAnswer, greatestDivisor);
       return false;
     }
   }
-
   console.log(`Congratulations, ${username}!`);
   return true;
 };
