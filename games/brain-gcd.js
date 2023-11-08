@@ -7,10 +7,10 @@ import {
 
 const getNumbersPair = () => {
   const divisors = [2, 3, 5];
-  const leastDivisor = divisors[getRandomNumber(3)];
-  let randomMultiplier = getRandomNumber(20);
+  const leastDivisor = divisors[getRandomNumber(1, 3)];
+  let randomMultiplier = getRandomNumber(1, 20);
   const firstNumber = leastDivisor * randomMultiplier;
-  randomMultiplier = getRandomNumber(20);
+  randomMultiplier = getRandomNumber(1, 20);
   const secondNumber = leastDivisor * randomMultiplier;
   return [firstNumber, secondNumber];
 };
