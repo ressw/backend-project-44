@@ -9,21 +9,22 @@ export const getRandomNumber = (max = 9) => Math.floor(Math.random() * max);
 export const isEven = (num) => num % 2 === 0;
 
 export const gameOver = (username, correctAnswer, userAnswer) => {
+  console.log();
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${username}!`);
 };
 
 export const checkCorrectAnswer = (username, correctAnswer, userAnswer) => {
-  let answer = userAnswer;
+  let uAnswer = userAnswer;
   if (typeof correctAnswer === 'number') {
-    answer = parseInt(userAnswer, 10);
+    uAnswer = parseInt(userAnswer, 10);
   }
-  if (correctAnswer === answer) {
+  if (correctAnswer === uAnswer) {
     console.log('Correct!');
     console.log();
     return true;
   }
-  gameOver(username, answer, userAnswer);
+  gameOver(username, correctAnswer, uAnswer);
   return false;
 };
 
