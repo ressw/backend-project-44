@@ -20,12 +20,11 @@ const isPrimeNumber = (num) => {
 };
 
 const brainPrime = () => {
-  const username = start();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   console.log();
-
   let attemp = 0;
   let check;
+  const username = start();
   while (attemp < questionsNumber) {
     const randomNum = getRandomNumber(1, 350);
     const correctAnswer = isPrimeNumber(randomNum) ? 'yes' : 'no';
