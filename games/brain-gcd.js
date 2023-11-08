@@ -35,12 +35,11 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
 };
 
 const brainGcd = () => {
-  const username = start();
   console.log('Find the greatest common divisor of given numbers.');
   console.log();
-
   let attemp = 0;
   let check = 0;
+  const username = start();
   while (attemp < questionsNumber) {
     const [firstNumber, secondNumber] = getNumbersPair();
     const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
