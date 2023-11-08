@@ -8,6 +8,11 @@ export const getRandomNumber = (max = 9) => Math.floor(Math.random() * max);
 
 export const isEven = (num) => num % 2 === 0;
 
+export const logCorrectAnswer = () => {
+  console.log('Correct!');
+  console.log();
+};
+
 export const gameOver = (username, answer, correctAnswer) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${username}!`);
