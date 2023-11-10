@@ -3,7 +3,7 @@
 import {
   start, getUserAnswer, getRandomNumber,
   checkCorrectAnswer, questionsNumber,
-} from '../src/index.js';
+} from '../index.js';
 
 const isPrimeNumber = (num) => {
   if (num < 2) return false;
