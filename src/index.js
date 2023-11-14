@@ -14,9 +14,7 @@ export const runGame = (gameQuestion, genNewQuestion) => {
   console.log();
   console.log(`${gameQuestion}\n`);
   let attemp = 0;
-  let question;
-  let correctAnswer;
-  let userAnswer;
+  let [question, correctAnswer, userAnswer] = ['', '', ''];
   while (attemp < questionsNumber) {
     [question, correctAnswer] = genNewQuestion();
     console.log(`Question: ${question}`);
