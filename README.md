@@ -24,15 +24,27 @@ git clone https://github.com/ressw/backend-project-44.git
 
 Установить в систему необходимые для запуска игр зависимости командой
 
-`npm install`
+```
+
+npm install
+
+```
 
 Установить в систему пакет с играми командой
 
-`npm link`
+```
+
+npm link
+
+```
 
 В случае ошибки, может потребоваться выполнение этой команды с sudo
 
-`sudo npm link`
+```
+
+sudo npm link
+
+```
 
 Далее игры запускаются командами \
 brain-even\
