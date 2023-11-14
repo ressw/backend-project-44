@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-import {
-  start, getUserAnswer, getRandomNumber,
-  checkCorrectAnswer, questionsNumber,
-} from '../index.js';
+import { runGame, getRandomNumber } from '../index.js';
 
 const isPrimeNumber = (num) => {
   if (num < 2) return false;
@@ -19,27 +16,14 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-const brainPrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  console.log();
-  let attemp = 0;
-  let check;
-  const username = start();
-  while (attemp < questionsNumber) {
-    const randomNum = getRandomNumber(1, 350);
-    const correctAnswer = isPrimeNumber(randomNum) ? 'yes' : 'no';
-    console.log(`Question: ${randomNum}`);
-    const userAnswer = getUserAnswer('Your answer: ');
-    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
-    if (check) {
-      attemp += 1;
-    } else {
-      return false;
-    }
-  }
+const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  console.log(`Congratulations, ${username}!`);
-  return true;
+const genNewQuestion = () => {
+  const question = getRandomNumber(1, 350);
+  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-export default brainPrime;
+export default () => {
+  runGame(gameQuestion, genNewQuestion);
+};

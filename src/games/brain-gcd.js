@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-import {
-  start, getUserAnswer, getRandomNumber,
-  checkCorrectAnswer, questionsNumber,
-} from '../src/index.js';
+import { runGame, getRandomNumber } from '../index.js';
 
 const getNumbersPair = () => {
   const divisors = [2, 3, 5];
@@ -34,26 +31,15 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
   return divisor;
 };
 
-const brainGcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  console.log();
-  let attemp = 0;
-  let check = 0;
-  const username = start();
-  while (attemp < questionsNumber) {
-    const [firstNumber, secondNumber] = getNumbersPair();
-    const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
-    const userAnswer = getUserAnswer('Your answer: ');
-    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
-    if (check) {
-      attemp += 1;
-    } else {
-      return false;
-    }
-  }
-  console.log(`Congratulations, ${username}!`);
-  return true;
+const gameQuestion = 'Find the greatest common divisor of given numbers.';
+
+const genNewQuestion = () => {
+  const [firstNumber, secondNumber] = getNumbersPair();
+  const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
+  const question = `${firstNumber} ${secondNumber}`;
+  return [question, correctAnswer];
 };
 
-export default brainGcd;
+export default () => {
+  runGame(gameQuestion, genNewQuestion);
+};

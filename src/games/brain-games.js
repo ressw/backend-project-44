@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import { start } from '../index.js';
+import { runGame } from '../index.js';
 
-export default start;
+export default () => {
+  runGame();
+};

@@ -1,30 +1,15 @@
 #!/usr/bin/env node
 
-import {
-  start, getUserAnswer, getRandomNumber, isEven,
-  checkCorrectAnswer, questionsNumber,
-} from '../src/index.js';
+import { runGame, isEven, getRandomNumber } from '../index.js';
 
-const brainEven = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  console.log();
-  let attemp = 0;
-  let check;
-  const username = start();
-  while (attemp < questionsNumber) {
-    const number = getRandomNumber();
-    const correctAnswer = isEven(number) ? 'yes' : 'no';
-    console.log(`Question: ${number}`);
-    const userAnswer = getUserAnswer('Your answer: ');
-    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
-    if (check) {
-      attemp += 1;
-    } else {
-      return false;
-    }
-  }
-  console.log(`Congratulations, ${username}!`);
-  return true;
+const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const genNewQuestion = () => {
+  const question = getRandomNumber();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-export default brainEven;
+export default () => {
+  runGame(gameQuestion, genNewQuestion);
+};

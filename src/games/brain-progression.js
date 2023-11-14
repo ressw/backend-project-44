@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-import {
-  start, getUserAnswer, getRandomNumber,
-  checkCorrectAnswer, questionsNumber,
-} from '../src/index.js';
+import { runGame, getRandomNumber } from '../index.js';
 
 const getProgression = () => {
   const firstNum = getRandomNumber(1, 20);
@@ -14,31 +11,17 @@ const getProgression = () => {
   return progression;
 };
 
-const brainProgression = () => {
-  const username = start();
-  console.log('What number is missing in the progression?');
-  console.log();
+const gameQuestion = 'What number is missing in the progression?';
 
-  let attemp = 0;
-  let check;
-  while (attemp < questionsNumber) {
-    const progression = getProgression();
-    const replaceIndex = getRandomNumber(0, progression.length - 1);
-    const correctAnswer = progression[replaceIndex];
-    progression[replaceIndex] = '..';
-    const progressionStr = progression.join(' ');
-    console.log(`Question: ${progressionStr}`);
-    const userAnswer = getUserAnswer('Your answer: ');
-    check = checkCorrectAnswer(username, correctAnswer, userAnswer);
-    if (check) {
-      attemp += 1;
-    } else {
-      return false;
-    }
-  }
-
-  console.log(`Congratulations, ${username}!`);
-  return true;
+const genNewQuestion = () => {
+  const progression = getProgression();
+  const replaceIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = progression[replaceIndex];
+  progression[replaceIndex] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 };
 
-export default brainProgression;
+export default () => {
+  runGame(gameQuestion, genNewQuestion);
+};
