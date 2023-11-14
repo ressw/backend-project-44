@@ -12,9 +12,7 @@ export const runGame = (gameQuestion, genNewQuestion) => {
   console.log(`Hello, ${username}!`);
   if (!gameQuestion) return null;
   console.log();
-  console.log(gameQuestion);
-  console.log();
-
+  console.log(`${gameQuestion}\n`);
   let attemp = 0;
   let question;
   let correctAnswer;
@@ -24,8 +22,7 @@ export const runGame = (gameQuestion, genNewQuestion) => {
     console.log(`Question: ${question}`);
     userAnswer = readlineSync.question('Your answer: ');
     if (String(correctAnswer) === String(userAnswer)) {
-      console.log('Correct!');
-      console.log();
+      console.log('Correct!\n');
       attemp += 1;
     } else {
       console.log();
@@ -34,7 +31,6 @@ export const runGame = (gameQuestion, genNewQuestion) => {
       return false;
     }
   }
-
   console.log(`Congratulations, ${username}!`);
   return true;
 };
