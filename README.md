@@ -16,29 +16,28 @@
 
 Клонировать проект себе на локальный компьютер командой
 
-```git clone https://github.com/ressw/backend-project-44.git
-```
+`git clone https://github.com/ressw/backend-project-44.git`
 
 Установить в систему необходимые для запуска игр зависимости командой
 
-```npm install
-```
+`npm install`
 
 Установить в систему пакет с играми командой
 
-```npm link
-```
+`npm link`
 
 В случае ошибки, может потребоваться выполнение этой команды с sudo
 
-```sudo npm link
-```
+`sudo npm link`
 
-Примеры игр:
+Далее игры запускаются командами brain-even, brain-calc, brain-gcd, brain-prime, brain-progression
+
+
+## Примеры игр
 
 Игра brain-even
 
-[![asciicast](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6.svg)](https://asciinema.org/a/wLJldORcn5AaqrYiNqzQ50Tc6)
+[![asciicast](https://asciinema.org/a/jxHDsS1WUMv1ws7uutEFmg2zt.svg)](https://asciinema.org/a/jxHDsS1WUMv1ws7uutEFmg2zt)
 
 Игра brain-calc
 
@@ -51,3 +50,7 @@
 Игра brain-progression
 
 [![asciicast](https://asciinema.org/a/P7wbpqHAV2ztxobbeCT81OZ3F.svg)](https://asciinema.org/a/P7wbpqHAV2ztxobbeCT81OZ3F)
+
+Игра brain-prime
+
+[![asciicast](https://asciinema.org/a/BVfFqfTahRFyoMduMWefekrly.svg)](https://asciinema.org/a/BVfFqfTahRFyoMduMWefekrly)
