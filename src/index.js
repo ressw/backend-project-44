@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 
 export const questionsNumber = 3;
-export function getRandomNumber(min = 1, max = 9) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-export const isEven = (num) => num % 2 === 0;
 
 export const runGame = (gameQuestion, genNewQuestion) => {
   console.log('Welcome to the Brain Games!');
