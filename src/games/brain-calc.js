@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { runGame, getRandomNumber } from '../index.js';
+import { runGame } from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const getRandomSignsResult = (num1, num2, sign) => {
   if (sign === '+') return num1 + num2;
