@@ -20,7 +20,7 @@ const genNewQuestion = () => {
   const sign = signs[getRandomNumber(0, 2)];
   const question = `${num1} ${sign} ${num2}`;
   const correctAnswer = getRandomSignsResult(num1, num2, sign);
-  return [question, correctAnswer];
+  return [question, String(correctAnswer)];
 };
 
 export default () => {
