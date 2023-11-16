@@ -20,7 +20,7 @@ const genNewQuestion = () => {
   const correctAnswer = progression[replaceIndex];
   progression[replaceIndex] = '..';
   const question = progression.join(' ');
-  return [question, correctAnswer];
+  return [question, String(correctAnswer)];
 };
 
 export default () => {
