@@ -7,24 +7,21 @@ export const runGame = (gameQuestion, genNewQuestion) => {
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!`);
   if (!gameQuestion) return null;
-  console.log();
-  console.log(`${gameQuestion}\n`);
-  let attemp = 0;
+  console.log(gameQuestion);
   let [question, correctAnswer, userAnswer] = ['', '', ''];
-  while (attemp < questionsNumber) {
+
+  for (let i = 0; i < 3; i += 1) {
     [question, correctAnswer] = genNewQuestion();
     console.log(`Question: ${question}`);
     userAnswer = readlineSync.question('Your answer: ');
-    if (String(correctAnswer) === String(userAnswer)) {
-      console.log('Correct!\n');
-      attemp += 1;
-    } else {
-      console.log();
+    if (String(correctAnswer) !== String(userAnswer)) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${username}!`);
       return false;
     }
+    console.log('Correct!');
   }
+
   console.log(`Congratulations, ${username}!`);
   return true;
 };
