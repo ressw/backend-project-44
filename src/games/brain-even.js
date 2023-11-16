@@ -10,7 +10,7 @@ const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".
 const genNewQuestion = () => {
   const question = getRandomNumber();
   const correctAnswer = isEven(question) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  return [String(question), correctAnswer];
 };
 
 export default () => {
