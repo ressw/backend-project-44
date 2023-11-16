@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { runGame, getRandomNumber } from '../index.js';
+import { runGame } from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const getNumbersPair = () => {
   const divisors = [2, 3, 5];
