@@ -1,24 +1,14 @@
-#!/usr/bin/env node
-
 import { runGame } from '../index.js';
 import getRandomNumber from '../random-number.js';
 
-const getNumbersPair = () => {
-  const divisors = [2, 3, 5];
-  const leastDivisor = divisors[getRandomNumber(0, 2)];
-  let randomMultiplier = getRandomNumber(1, 20);
-  const firstNumber = leastDivisor * randomMultiplier;
-  randomMultiplier = getRandomNumber(1, 20);
-  const secondNumber = leastDivisor * randomMultiplier;
-  return [firstNumber, secondNumber];
-};
+const gameQuestion = 'Find the greatest common divisor of given numbers.';
 
-const getGreatestDivisor = (firstNumber, secondNumber) => {
-  if ((firstNumber === 0) || (secondNumber === 0)) return 1;
-  let [minNum, maxNum] = [firstNumber, secondNumber];
+const getGreatestDivisor = (number1, number2) => {
+  if ((number1 === 0) || (number2 === 0)) return 1;
+  let [minNum, maxNum] = [number1, number2];
   if (minNum > maxNum) {
-    minNum = secondNumber;
-    maxNum = firstNumber;
+    minNum = number2;
+    maxNum = number1;
   }
 
   if (maxNum % minNum === 0) return minNum;
@@ -32,12 +22,11 @@ const getGreatestDivisor = (firstNumber, secondNumber) => {
   return divisor;
 };
 
-const gameQuestion = 'Find the greatest common divisor of given numbers.';
-
 const genNewQuestion = () => {
-  const [firstNumber, secondNumber] = getNumbersPair();
-  const question = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = getGreatestDivisor(firstNumber, secondNumber);
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
+  const question = `${number1} ${number2}`;
+  const correctAnswer = getGreatestDivisor(number1, number2);
   return [question, String(correctAnswer)];
 };
 
