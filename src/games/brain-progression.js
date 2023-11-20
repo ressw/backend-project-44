@@ -1,21 +1,16 @@
-#!/usr/bin/env node
-
 import { runGame } from '../index.js';
 import getRandomNumber from '../random-number.js';
 
-const getProgression = () => {
-  const firstNum = getRandomNumber(1, 20);
-  const diff = getRandomNumber(1, 5);
-  const len = 5 + getRandomNumber(2, 5);
-  const progression = Array(len).fill()
-    .map((_, i) => firstNum + (i * diff));
-  return progression;
-};
-
 const gameQuestion = 'What number is missing in the progression?';
 
+const getProgression = (firstNum, diff, len) => Array(len)
+  .fill().map((_, i) => firstNum + (i * diff));
+
 const genNewQuestion = () => {
-  const progression = getProgression();
+  const firstNum = getRandomNumber(1, 20);
+  const diff = getRandomNumber(1, 5);
+  const len = getRandomNumber(5, 10);
+  const progression = getProgression(firstNum, diff, len);
   const replaceIndex = getRandomNumber(0, progression.length - 1);
   const correctAnswer = progression[replaceIndex];
   progression[replaceIndex] = '..';
