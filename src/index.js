@@ -8,12 +8,13 @@ export const runGame = (gameQuestion, genNewQuestion) => {
   console.log(`Hello, ${username}!`);
   if (!gameQuestion) return null;
   console.log(gameQuestion);
-  let [question, correctAnswer, userAnswer] = ['', '', ''];
+  // let [question, correctAnswer, userAnswer] = ['', '', ''];
+  const attemps = 3;
 
-  for (let i = 0; i < 3; i += 1) {
-    [question, correctAnswer] = genNewQuestion();
+  for (let i = 0; i < attemps; i += 1) {
+    const [question, correctAnswer] = genNewQuestion();
     console.log(`Question: ${question}`);
-    userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${username}!`);
