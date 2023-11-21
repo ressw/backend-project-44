@@ -18,10 +18,11 @@ export const runGame = (gameQuestion, genNewQuestion) => {
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${username}!`);
-      return;
+      return false;
     }
     console.log('Correct!');
   }
 
   console.log(`Congratulations, ${username}!`);
+  return true;
 };
