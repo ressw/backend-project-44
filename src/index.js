@@ -8,7 +8,6 @@ export const runGame = (gameQuestion, genNewQuestion) => {
   console.log(`Hello, ${username}!`);
   if (!gameQuestion) return null;
   console.log(gameQuestion);
-  // let [question, correctAnswer, userAnswer] = ['', '', ''];
   const attemps = 3;
 
   for (let i = 0; i < attemps; i += 1) {
