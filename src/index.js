@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-
 import readlineSync from 'readline-sync';
 
 export const questionsNumber = 3;
@@ -8,7 +6,6 @@ export function runGame(gameQuestion, genNewQuestion) {
   console.log('Welcome to the Brain Games!');
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!`);
-  if (!gameQuestion) return null;
   console.log(gameQuestion);
   const attemps = 3;
 
