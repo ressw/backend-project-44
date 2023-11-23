@@ -5,7 +5,8 @@ const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "n
 
 const isPrimeNumber = (num) => {
   if (num < 2) return false;
-  for (let div = 2; div <= Math.sqrt(num); div += 1) {
+  const numSqrt = Math.sqrt(num);
+  for (let div = 2; div <= numSqrt; div += 1) {
     if (num % div === 0) {
       return false;
     }
